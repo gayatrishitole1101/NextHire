@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# 🚀 NextHire – Job Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NextHire is a full-stack job portal web application designed to help students and job seekers explore job opportunities, apply for jobs, manage their profiles, upload resumes, and track their application status.
 
-## Available Scripts
+The project is built using React.js for the frontend, Spring Boot for the backend, and MySQL for database management.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 👨‍🎓 Student Module
+- Student Registration and Login
+- Student Profile Management
+- Browse and Search Job Opportunities
+- Apply for Jobs
+- View My Applications
+- Track Application Status
+- Upload and Download Resume
+- Notifications for Application Status
+- Account Settings
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🛠️ Admin Module
+- Admin Dashboard
+- Add, Update, and Delete Jobs
+- Manage Job Applications
+- View Applicants
+- Update Application Status
+- View Dashboard Statistics
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*Note: Admin module features are planned and will be implemented as development progresses.*
 
-### `npm test`
+## 🧰 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend**
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Axios
+- React Router
 
-### `npm run build`
+**Backend**
+- Java
+- Spring Boot
+- Spring Data JPA
+- REST APIs
+- Hibernate
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Database**
+- MySQL
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Tools**
+- Visual Studio Code
+- Eclipse / Spring Tool Suite
+- Git
+- GitHub
+- Postman
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🏗️ Project Architecture
 
-### `npm run eject`
+The application follows a client-server architecture:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. React.js provides the user interface.
+2. Axios sends HTTP requests to the Spring Boot REST APIs.
+3. Spring Boot handles application logic and database operations.
+4. MySQL stores student, job, and application information.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js and npm
+- Java JDK
+- MySQL Server
+- Git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Clone the Repository
 
-## Learn More
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd NextHire
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual GitHub repository URL.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Run the Frontend
 
-### Code Splitting
+Navigate to the frontend folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd frontend
+npm install
+npm start
+```
 
-### Analyzing the Bundle Size
+The frontend runs at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`http://localhost:3000`
 
-### Making a Progressive Web App
+*If your React project is in the repository root, run `npm install` and `npm start` from the root folder instead.*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 3. Run the Backend
 
-### Advanced Configuration
+1. Open the Spring Boot project in Eclipse or Spring Tool Suite.
+2. Configure your MySQL database in `application.properties`.
+3. Run the Spring Boot application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The backend typically runs at:
 
-### Deployment
+`http://localhost:8080`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 4. Database Configuration
 
-### `npm run build` fails to minify
+Create the MySQL database and configure the database connection in `application.properties`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Do not commit database passwords, API keys, or other secrets to GitHub. Use your own local configuration.
+
+## 🔌 Key API Endpoints
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| POST | `/studentregistration` | Register a student |
+| POST | `/studentlogin` | Student login |
+| GET | `/student/{id}` | Get student details |
+| GET | `/student/email/{email}` | Get student by email |
+| PUT | `/updateprofile/{id}` | Update student profile |
+| POST | `/student/{studentid}/resume` | Upload resume |
+| GET | `/student/{studentid}/resume/download` | Download resume |
+| GET | `/findalljobs` | Get all jobs |
+| GET | `/findbyid/{jobid}` | Get job details |
+| POST | `/applyjob` | Apply for a job |
+| GET | `/application/student/{studentid}` | View student applications |
+
+## 📌 Future Enhancements
+
+- Complete Admin Dashboard
+- Role-Based Access Control
+- Secure Password Hashing
+- Advanced Job Search and Filtering
+- Improved Notification Management
+- Enhanced Validation and Error Handling
+
+## 🎯 Project Objective
+
+The objective of NextHire is to provide a centralized platform connecting job seekers with employment opportunities while simplifying job applications and application tracking.
+
+## 👩‍💻 Developer
+
+**Gayatri Shitole**
+
+Full Stack Development Project
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star.
